@@ -1,3 +1,5 @@
+[![Starware](https://img.shields.io/badge/⭐-Starware-f5a91a?labelColor=black)](https://github.com/zepfietje/starware)
+*The probot app is currently in review for being pulished in the Github Matketplace"
 # project-spampr
 
 > A GitHub App built with [Probot](https://github.com/probot/probot). A probot app to try label spammy pull requests. Upon listening to the news of how people were spamming legit repos with spammy PRs for a Hacktoberfest T-shirt, I decided to take matter in my own hands😎😎
@@ -21,7 +23,7 @@ npm install
 # Run the bot
 npm start
 ```
-
+This will run the bot in localhost. You can install it in your repositories from localhost itself.
 ## Contributing
 
 If you have suggestions for how project-spampr could be improved, or want to report a bug, open an issue! I'd love all and any contributions.
@@ -31,3 +33,9 @@ For more, check out the [Contributing Guide](CONTRIBUTING.md).
 ## License
 
 [ISC](LICENSE) © 2020 Chinmay Kabi <chinmay.kabi@live.com>
+
+## Starware
+
+project-spampr is Starware.  
+This means you're free to use the project, as long as you star its GitHub repository.  
+Your appreciation makes us grow and glow up. ⭐
