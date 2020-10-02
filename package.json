@@ -1,0 +1,32 @@
+{
+    "name": "project-spampr",
+    "version": "1.0.0",
+    "private": true,
+    "description": "A probot app to try close spammy pull requests",
+    "author": "Chinmay Kabi <chinmay.kabi@live.com>",
+    "license": "ISC",
+    "repository": "https://github.com/Chinmay-KB/project-spampr.git",
+    "homepage": "https://github.com/Chinmay-KB/project-spampr",
+    "bugs": "https://github.com/Chinmay-KB/project-spampr/issues",
+    "keywords": [
+        "probot",
+        "github",
+        "probot-app"
+    ],
+    "scripts": {
+        "start": "probot run ./index.js",
+        "test": "jest"
+    },
+    "dependencies": {
+        "probot": "^10.1.0",
+        "node-fetch": "2.6.1"
+    },
+    "devDependencies": {
+        "jest": "^26.4.0",
+        "nock": "^13.0.4",
+        "smee-client": "^1.1.0"
+    },
+    "engines": {
+        "node": ">= 10.13.0"
+    }
+}
