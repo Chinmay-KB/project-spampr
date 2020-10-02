@@ -2,7 +2,7 @@
     "name": "project-spampr",
     "version": "1.0.0",
     "private": true,
-    "description": "A probot app to try close spammy pull requests",
+    "description": "A probot app to try close spammy pull requests. Built within hours of seeing a flood of spammy prs during hacktoberfest 2020",
     "author": "Chinmay Kabi <chinmay.kabi@live.com>",
     "license": "ISC",
     "repository": "https://github.com/Chinmay-KB/project-spampr.git",

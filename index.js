@@ -16,6 +16,7 @@ module.exports = app => {
         const headers = {
             "User-Agent": "Chinmay-KB"
         };
+        const insult_api = 'https://evilinsult.com/generate_insult.php?lang=en&type=json';
         const issues_api_prefix = 'https://api.github.com/repos/';
         const issues_api_suffix = '/issues?state=open'
         const pr = context.payload.pull_request;
@@ -25,13 +26,7 @@ module.exports = app => {
         const semi_url = '/repos/' + pr + issues_api_suffix;
         const issues_url = issues_api_prefix + repo + issues_api_suffix;
         let flag = true;
-        // var options = {
-        //     hostname: 'api.github.com',
-        //     port: 443,
-        //     path: encodeURIComponent(semi_url),
-        //     method: 'GET',
-        //     headers: { 'User-Agent': 'Chinmay-KB' }
-        // }
+        let insult = '';
 
         fetch(issues_url).then((res) => res.json()).then((data) => {
             for (var i = 0; i < data.length; i++) {
@@ -49,21 +44,25 @@ module.exports = app => {
                 }
 
             }
+            fetch(insult_api).then((res) => res.json()).then((data) => {
+                insult = data['insult'];
+                context.log.info(insult);
+                const params = context.issue({ body: '*' + insult + '*' + '\n Congratulations to @' + sender + ' towards his contribution to spamtoberfest!! ' });
 
-            const params = context.issue({ body: 'Congratulations to @' + sender + ' towards his contribution to spamtoberfest!! ' });
+                if (flag) { //TODO: Change to new implementation
+                    context.github.issues.addLabels(context.issue({
+                        labels: ['spam', 'spamtoberfest', 'invalid', 'spamprbot-reject']
+                    }));
+                    context.github.issues.createComment(params);
 
-            if (flag) { //TODO: Change to new implementation
-                context.github.issues.addLabels(context.issue({
-                    labels: ['spam', 'spamtoberfest', 'invalid', 'spamprbot-reject']
-                }));
-                // context.github.issues.createComment(params);
+                } else {
+                    context.github.issues.createComment(context.issue({ body: "This pull request seems genuine" }));
+                    context.github.issues.addLabels(context.issue({
+                        labels: ['spamprbot-approved']
+                    }));
+                }
+            });
 
-            } else {
-                context.github.issues.createComment(context.issue({ body: "This pull request seems genuine" }));
-                context.github.issues.addLabels(context.issue({
-                    labels: ['spamprbot-approved']
-                }));
-            }
         });
         // https.request(options, (resp) => {
         //     let data = '';
