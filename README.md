@@ -1,6 +1,6 @@
 [![Starware](https://img.shields.io/badge/⭐-Starware-f5a91a?labelColor=black)](https://github.com/zepfietje/starware)
 
-*The probot app is currently in review for being pulished in the Github Matketplace"
+*The probot app is currently in review for being pulished in the Github Matketplace*
 # project-spampr
 
 > A GitHub App built with [Probot](https://github.com/probot/probot). A probot app to try label spammy pull requests. Upon listening to the news of how people were spamming legit repos with spammy PRs for a Hacktoberfest T-shirt, I decided to take matter in my own hands😎😎
