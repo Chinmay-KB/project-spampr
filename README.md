@@ -4,8 +4,10 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 *The probot app is currently in review for being pulished in the Github Matketplace*
-# project-spampr
 
+*PS- This probot app was built at Hero Hacks. You can check out the project [here](https://devpost.com/software/project-spampr?ref_content=user-portfolio&ref_feature=in_progress)*
+
+# project-spampr
 > A GitHub App built with [Probot](https://github.com/probot/probot). A probot app to try label spammy pull requests. Upon listening to the news of how people were spamming legit repos with spammy PRs for a Hacktoberfest T-shirt, I decided to take matter in my own hands😎😎
 
 ## What it does
