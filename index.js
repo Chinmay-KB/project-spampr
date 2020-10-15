@@ -27,7 +27,6 @@ module.exports = app => {
         const issues_url = issues_api_prefix + repo + issues_api_suffix;
         let flag = true;
         let insult = '';
-
         fetch(issues_url).then((res) => res.json()).then((data) => {
             for (var i = 0; i < data.length; i++) {
                 var issue = data[i];
@@ -48,7 +47,7 @@ module.exports = app => {
                 insult = data['insult'];
                 context.log.info(insult);
                 const params = context.issue({ body: '*' + insult + '*' + '\n Congratulations to @' + sender + ' towards his contribution to spamtoberfest!! ' });
-
+                flag = context.isBot ? false : flag;
                 if (flag) { //TODO: Change to new implementation
                     context.github.issues.addLabels(context.issue({
                         labels: ['spam', 'spamtoberfest', 'invalid', 'spamprbot-reject']
@@ -105,11 +104,10 @@ module.exports = app => {
         //     console.log("Error: " + err.message);
         // });
 
+        // For more information on building apps:
+        // https://probot.github.io/docs/
+
+        // To get your app running against GitHub, see:
+        // https://probot.github.io/docs/development/
     }
-
-    // For more information on building apps:
-    // https://probot.github.io/docs/
-
-    // To get your app running against GitHub, see:
-    // https://probot.github.io/docs/development/
 }
