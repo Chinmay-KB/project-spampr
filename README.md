@@ -3,7 +3,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-*The probot app is currently in review for being pulished in the Github Matketplace*
+*The bot is live in [marketplace](https://github.com/marketplace/spampr)!!*
 
 *PS- This probot app was built at Hero Hacks. You can check out the project [here](https://devpost.com/software/project-spampr?ref_content=user-portfolio&ref_feature=in_progress)*
 
